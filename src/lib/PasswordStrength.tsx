@@ -101,7 +101,6 @@ export class ReactPassStrength extends React.Component<IPasswordStrengthProps, S
   }
 
   renderPwned(isPawned: boolean) {
-    console.log('should render breach:', isPawned);
     if (isPawned) {
       return (
         <div className="HIBP">
