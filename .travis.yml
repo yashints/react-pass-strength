@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+- '8'
+addons:
+  chrome: stable
+install:
+- npm install
+cache:
+  directories:
+  - "./node_modules"
+script:
+- npm test
+- npm run build
+before_deploy:
+- cd dist
+deploy:
+  provider: npm
+  email: adel.mehrban@gmail.com
+  api_key:
+    secure: yNhmru+wjAbd03mDM8KdMHS5/GAvcA4Ky/hVH0jemz8OVb8wdDRtldmjHuyZ2/U2nz4dYp8QtjD3Gf8VEax3rezSlxnVxnfTi2GXj+lHC3TzU5q1ncYXDFME7LoK6iiWKG7H0EHJgIu/tSl/JppKqcz+7rRyZwQwUOzUi8Q698lVQky9hcpGUR2ebLK/ugaC+VUNdT30SvqSDuVtLHrUmde8QxIECilWoRLJCYeFp/j7wUaNcLDKxzJlPfvdNmhoms6vRtC7gDpvyuvbm8fN7Te9IBCYSF/fOHHZ5ac+0RgtfwQScArzBfaSsgfdKTnEiFzQpXZLPJNe8roxBl/ihwRXHfuvieXpwVxBQR/rD2qgIpLWdqzoS1r2lH2Hoqv8+UfivRakf0H/jtY80M5o5NnFMzO68GUlDGVO7m5BeSBblNJ3tVxkeG/2VEK0WJ+uixFurmGHeaIOR0covf2TxIUJNa1W1NNx23UQtO0uo8RDTC3mPzQhy2fhXtjfvvbLYOT9QBhgtEAztLlE1FoIgtrNu2rXEyr6E/6zbMrK/MxGvxUepq/Jx1xf2qiecHlooFjUAe/FwW/3ZXeEGLU0nkZfTEoV1VjPtKgz/AgdEzS/x4O1GEB4vmxeaM4STaUgfADb+wOz7IhE8zP0fggziS6KKSdz463IHmNlWKdPDiI=
+  on:
+    repo: yashints/react-pass-strength
+  skip_cleanup: true

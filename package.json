@@ -1,0 +1,127 @@
+{
+  "name": "react-pass-strength",
+  "version": "1.0.0",
+  "private": false,
+  "description": "This is a small React Component Library which checks your password strength and also whether it's breached or not.",
+  "author": {
+    "name": "Yaser Adel Mehraban",
+    "email": "yaser@mehraban.com.au",
+    "url": "https://mehraban.com.au"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "license": "MIT",
+  "homepage": "https://github.com/yashints/react-pass-strength#readme",
+  "bugs": {
+    "url": "https://github.com/yashints/react-pass-strength/issues",
+    "email": "yaser@mehraban.com.au"
+  },
+  "keywords": [
+    "react",
+    "component library",
+    "password",
+    "strength",
+    "HIBP"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/plugin-proposal-class-properties": "^7.3.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-typescript": "^7.3.3",
+    "@types/enzyme": "^3.9.0",
+    "@types/enzyme-adapter-react-16": "^1.0.5",
+    "@types/jest": "24.0.6",
+    "@types/node": "11.9.5",
+    "@types/react": "16.8.4",
+    "@types/react-dom": "16.8.2",
+    "@types/react-test-renderer": "^16.8.1",
+    "@types/sha1": "^1.1.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
+    "jest": "^23.1.0",
+    "jest-enzyme": "^7.0.1",
+    "jest-junit-reporter": "^1.1.0",
+    "mkdirp": "^0.5.1",
+    "npm-run-all": "^4.1.5",
+    "react": "^16.8.3",
+    "react-docgen-typescript": "^1.12.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "2.1.5",
+    "react-styleguidist": "^9.0.2",
+    "react-test-renderer": "^16.8.3",
+    "rimraf": "^2.6.3",
+    "rxjs": "^6.4.0",
+    "sha1": "^1.1.1",
+    "ts-jest": "^24.0.0",
+    "typescript": "3.3.3333"
+  },
+  "peerDependencies": {
+    "jest": "^23.1.0",
+    "jest-enzyme": "^7.0.1",
+    "jest-junit-reporter": "^1.1.0",
+    "react": "^16.8.3",
+    "react-docgen-typescript": "^1.12.3",
+    "react-dom": "^16.8.3",
+    "rxjs": "^6.4.0",
+    "sha1": "^1.1.1",
+    "ts-jest": "^24.0.0",
+    "typescript": "3.3.3333"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "SET NODE_ENV=production && rimraf ./dist && mkdirp ./dist && babel ./src/lib --out-dir ./dist --extensions \".ts,.tsx\" --source-maps inline",
+    "build:types": "tsc --emitDeclarationOnly",
+    "eject": "react-scripts eject",
+    "test": "jest --watchAll",
+    "test-ci": "jest --coverage --ci  --testResultsProcessor ./node_modules/jest-junit-reporter",
+    "styleguide": "npm-run-all -p styleguidist",
+    "styleguidist": "styleguidist server",
+    "styleguide-build": "styleguidist build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "jest": {
+    "coverageReporters": [
+      "text",
+      "html",
+      "cobertura"
+    ],
+    "globals": {
+      "ts-jest": {
+        "tsConfigFile": "./tsconfig.test.json"
+      }
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest/setupTests.ts",
+      "<rootDir>/jest/jestPolyfills.js"
+    ],
+    "testEnvironment": "jsdom",
+    "testRegex": ".test.(ts|tsx?)$",
+    "testURL": "http://localhost",
+    "transform": {
+      "^.+\\.tsx?$": "ts-jest",
+      "^.+\\.css$": "<rootDir>/jest/cssTransform.js",
+      "^.+\\.scss$": "<rootDir>/jest/cssTransform.js"
+    },
+    "transformIgnorePatterns": [
+      "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs|ts|tsx)$"
+    ]
+  }
+}
