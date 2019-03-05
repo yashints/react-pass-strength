@@ -10,6 +10,7 @@ script:
 - npm run test:no-watch
 - npm run build:linux
 - npm run build:types
+- npm run package
 before_deploy:
 - cd dist
 deploy:
