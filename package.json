@@ -1,6 +1,6 @@
 {
   "name": "react-pass-strength",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": false,
   "description": "This is a small React Component Library which checks your password strength and also whether it's breached or not.",
   "author": {
@@ -76,7 +76,7 @@
     "build": "SET NODE_ENV=production && rimraf ./dist && mkdirp ./dist && babel ./src/lib --out-dir ./dist --extensions \".ts,.tsx\" --source-maps inline",
     "build:linux": "export NODE_ENV=production && rm -rf dist && mkdir dist && babel ./src/lib --out-dir ./dist --extensions \".ts,.tsx\" --source-maps inline",
     "build:types": "tsc --emitDeclarationOnly",
-    "package": "copyfiles package.json ReadMe.md dist && npm pack",
+    "package": "copyfiles package.json ReadMe.md dist && && cd dist && npm pack",
     "eject": "react-scripts eject",
     "test": "jest --watchAll",
     "test:no-watch": "jest",
