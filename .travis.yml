@@ -7,8 +7,9 @@ cache:
   directories:
   - "./node_modules"
 script:
-- npm test:no-watch
+- npm run test:no-watch
 - npm run build:linux
+- npm run build:types
 before_deploy:
 - cd dist
 deploy:
