@@ -75,6 +75,7 @@
     "build:types": "tsc --emitDeclarationOnly",
     "eject": "react-scripts eject",
     "test": "jest --watchAll",
+    "test:no-watch": "jest",
     "test-ci": "jest --coverage --ci  --testResultsProcessor ./node_modules/jest-junit-reporter",
     "styleguide": "npm-run-all -p styleguidist",
     "styleguidist": "styleguidist server",
