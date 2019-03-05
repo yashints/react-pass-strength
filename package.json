@@ -72,6 +72,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "SET NODE_ENV=production && rimraf ./dist && mkdirp ./dist && babel ./src/lib --out-dir ./dist --extensions \".ts,.tsx\" --source-maps inline",
+    "build:linux": "export NODE_ENV=production && rm -rf dist && mkdir dist && babel ./src/lib --out-dir ./dist --extensions \".ts,.tsx\" --source-maps inline",
     "build:types": "tsc --emitDeclarationOnly",
     "eject": "react-scripts eject",
     "test": "jest --watchAll",
