@@ -1,6 +1,6 @@
 {
   "name": "react-pass-strength",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "private": false,
   "description": "This is a small React Component Library which checks your password strength and also whether it's breached or not.",
   "author": {
