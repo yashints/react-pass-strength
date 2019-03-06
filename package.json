@@ -1,6 +1,6 @@
 {
   "name": "react-pass-strength",
-  "version": "1.0.2",
+  "version": "1.0.18",
   "private": false,
   "description": "This is a small React Component Library which checks your password strength and also whether it's breached or not.",
   "author": {
@@ -8,9 +8,8 @@
     "email": "yaser@mehraban.com.au",
     "url": "https://mehraban.com.au"
   },
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "types": "dist/types.d.ts",
+  "main": "lib/Index.js",
+  "module": "lib/Index.d.ts",
   "license": "MIT",
   "homepage": "https://github.com/yashints/react-pass-strength#readme",
   "bugs": {
@@ -25,12 +24,6 @@
     "HIBP"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.4",
-    "@babel/plugin-proposal-class-properties": "^7.3.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
-    "@babel/preset-typescript": "^7.3.3",
     "@types/enzyme": "^3.9.0",
     "@types/enzyme-adapter-react-16": "^1.0.5",
     "@types/jest": "24.0.6",
@@ -60,22 +53,18 @@
     "typescript": "3.3.3333"
   },
   "peerDependencies": {
-    "jest": "^23.1.0",
-    "jest-enzyme": "^7.0.1",
-    "jest-junit-reporter": "^1.1.0",
     "react": "^16.8.3",
-    "react-docgen-typescript": "^1.12.3",
     "react-dom": "^16.8.3",
     "rxjs": "^6.4.0",
     "sha1": "^1.1.1",
-    "ts-jest": "^24.0.0",
     "typescript": "3.3.3333"
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "SET NODE_ENV=production && rimraf ./dist && mkdirp ./dist && babel ./src/lib --out-dir ./dist --extensions \".ts,.tsx\" --source-maps inline",
-    "build:linux": "export NODE_ENV=production && rm -rf dist && mkdir dist && babel ./src/lib --out-dir ./dist --extensions \".ts,.tsx\" --source-maps inline",
-    "build:types": "tsc --emitDeclarationOnly",
+    "build": "SET NODE_ENV=production && rimraf ./dist && mkdirp -p ./dist/lib && tsc --declaration",
+    "build:linux": "export NODE_ENV=production && rm -rf dist && mkdir -p dist/lib && tsc --declaration",
+    "cleanup": "rimraf ./dist/**/*.test.js ./dist/**/__mocks__",
+    "bundle:css": "copyfiles -u 1 ./src/lib/*.css ./dist/",
     "package": "copyfiles package.json ReadMe.md dist && cd dist && npm pack",
     "eject": "react-scripts eject",
     "test": "jest --watchAll",

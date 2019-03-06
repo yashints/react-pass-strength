@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "outFile": "dist/types.d.ts",
+    "outDir": "dist",
     "target": "es5",
     "lib": [
       "dom",
@@ -17,7 +17,7 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "declaration": true,
-    "jsx": "preserve"
+    "jsx": "react"
   },
   "include": [
     "src"

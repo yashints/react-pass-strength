@@ -1,1 +1,1 @@
-export { default } from './lib/PasswordStrength';
+export { default as ReactPassStrength } from './lib/PasswordStrength';
